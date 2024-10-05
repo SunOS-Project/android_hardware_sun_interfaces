@@ -1,0 +1,19 @@
+/*
+ * Copyright (C) 2023 The Nameless-AOSP Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+package vendor.pixelworks.hardware.feature@1.0;
+
+enum ChipFeature : uint32_t {
+    IRIS2 = 0,
+    IRIS2_PLUS = 1,
+    IRIS3 = 2,
+    IRIS5 = 3,
+    IRIS6 = 4,
+    IRISSOFT = 5,
+    IRIS5_DUAL = 6,
+    IRIS7 = 7,
+    IRIS7_DUAL = 8,
+    IRIS_FPGA = 30
+};

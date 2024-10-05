@@ -1,0 +1,19 @@
+/*
+ * Copyright (C) 2022 The Nameless-AOSP Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+package vendor.nameless.hardware.battery@1.0;
+
+interface IBattery {
+    hasFeature(Feature feature) generates (bool rc);
+    readChargingStatus() generates (ChargingStatus status);
+    isChargingSuspended() generates (bool suspended);
+    setChargingSuspended(bool suspended);
+    isWirelessQuietModeEnabled() generates (bool enabled);
+    setWirelessQuietModeEnabled(bool enabled);
+    isWirelessRXEnabled() generates (bool enabled);
+    setWirelessRXEnabled(bool enabled);
+    isWirelessTXEnabled() generates (bool enabled);
+    setWirelessTXEnabled(bool enabled);
+};

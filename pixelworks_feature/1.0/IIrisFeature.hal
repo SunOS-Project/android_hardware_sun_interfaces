@@ -1,0 +1,10 @@
+/*
+ * Copyright (C) 2023 The Nameless-AOSP Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+package vendor.pixelworks.hardware.feature@1.0;
+
+interface IIrisFeature {
+    getFeature() generates (int32_t result, uint32_t feature);
+};

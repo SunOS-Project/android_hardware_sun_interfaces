@@ -1,0 +1,10 @@
+/*
+ * Copyright (C) 2023 The Nameless-AOSP Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+package vendor.pixelworks.hardware.display@1.0;
+
+interface IIrisCallback {
+    onFeatureChanged(int32_t type, vec<int32_t> values);
+};

@@ -1,0 +1,19 @@
+/*
+ * Copyright (C) 2022 The Nameless-AOSP Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+package vendor.nameless.hardware.displayfeature@1.0;
+
+enum Feature : uint32_t {
+    DC_DIMMING = 1,
+    EDGE_TOUCH = 2,
+    HIGH_SAMPLE_TOUCH = 4,
+    HBM_MODE = 8,
+    SDR2HDR = 16,
+    MEMC_FHD = 32,
+    MEMC_QHD = 64,
+    VIDEO_OSIE = 128,
+    LTPO = 256,
+    SCREEN_OFF_GESTURE = 512,
+};

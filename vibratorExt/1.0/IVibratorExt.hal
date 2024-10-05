@@ -1,0 +1,17 @@
+/*
+ * Copyright (C) 2022 The Nameless-AOSP Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+package vendor.nameless.hardware.vibratorExt@1.0;
+
+interface IVibratorExt {
+    initVibrator();
+    vibratorOn(Effect effectId, uint64_t duration) generates (int64_t milliseconds);
+    vibratorOff();
+    setAmplitude(float amplitude);
+    getStrengthLevelRange(Type type) generates (LevelRange range);
+    getStrengthLevel(Type type) generates (uint32_t level);
+    setStrengthLevel(Type type, uint32_t level);
+    isEffectSupported(Effect effectId) generates (bool rc);
+};
