@@ -10,7 +10,9 @@ interface IVibratorExt {
     vibratorOn(Effect effectId, uint64_t duration) generates (int64_t milliseconds);
     vibratorOff();
     setAmplitude(float amplitude);
+    setHapticStyle(Style style);
     getStrengthLevelRange(Type type) generates (LevelRange range);
     setStrengthLevel(Type type, uint32_t level);
     isEffectSupported(Effect effectId) generates (bool rc);
+    isHapticStyleSupported(Style style) generates (bool rc);
 };

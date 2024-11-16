@@ -74,6 +74,11 @@ enum Effect : uint32_t {
     CUSTOM_EFFECT_END,
 };
 
+enum Style : uint32_t {
+    CRISP,
+    GENTLE,
+};
+
 enum Type : uint32_t {
     ALARM_CALL,
     HAPTIC,
