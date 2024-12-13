@@ -15,5 +15,9 @@ enum Feature : uint32_t {
     MEMC_QHD = 64,
     VIDEO_OSIE = 128,
     LTPO = 256,
-    SCREEN_OFF_GESTURE = 512,
+};
+
+enum Command : uint32_t {
+    CMD_INIT_TOUCH_GESTURE = 1,
+    CMD_REPORT_TOUCH_GESTURE = 2,
 };

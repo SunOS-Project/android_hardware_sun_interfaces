@@ -11,5 +11,6 @@ interface IDisplayFeature {
     setFeatureEnabled(Feature feature, bool enabled);
     setColorMode(uint32_t mode);
     setDisplayOrientation(uint32_t orientation);
+    sendCommand(Command command) generates (int32_t rc);
     getCurrentFps() generates (uint32_t rc);
 };
