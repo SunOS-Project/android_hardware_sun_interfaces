@@ -37,10 +37,10 @@ namespace hardware {
 namespace vibrator {
 
 class Vibrator : public BnVibrator {
-    Vibrator();
 private:
     bool mSupportExternalControl = false;
 public:
+    Vibrator();
     ndk::ScopedAStatus getCapabilities(int32_t* _aidl_return) override;
     ndk::ScopedAStatus off() override;
     ndk::ScopedAStatus on(int32_t timeoutMs,

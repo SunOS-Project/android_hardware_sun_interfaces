@@ -31,13 +31,23 @@ cc_binary {
     cflags: Common_CFlags,
     srcs: [
         "service.cpp",
+        "richtap/*.cpp",
     ],
     shared_libs: [
         "libbase",
         "libbinder_ndk",
         "libcutils",
+        "liblog",
         "libutils",
         "android.hardware.vibrator-V2-ndk",
         "android.hardware.vibrator-stub",
+        "vendor.aac.hardware.richtap.vibrator-V2-ndk",
+        "libaacvibrator",
     ],
+}
+
+cc_library_shared {
+    name: "libaacvibrator",
+    compile_multilib: "64",
+    soc_specific: true,
 }

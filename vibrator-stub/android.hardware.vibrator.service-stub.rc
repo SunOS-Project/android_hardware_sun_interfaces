@@ -1,4 +1,20 @@
+on late-fs
+    chmod 0666 /dev/aw86917_haptic
+    chown system system /dev/aw86917_haptic
+
+    chmod 0666 /dev/aw8697_haptic
+    chown system system /dev/aw8697_haptic
+
+    chmod 0666 /dev/aac_richtap_dev
+    chown system system /dev/aac_richtap_dev
+
+    chmod 0666 /dev/awinic_haptic
+    chown system system /dev/awinic_haptic
+
 service android.vibrator-stub /vendor/bin/hw/android.hardware.vibrator.service-stub
     class hal
     user system
     group system input
+
+on property:sys.boot_completed=1
+    setprop vendor.haptic.calibrate.done 1
