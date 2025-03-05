@@ -15,6 +15,3 @@ service android.vibrator-stub /vendor/bin/hw/android.hardware.vibrator.service-s
     class hal
     user system
     group system input
-
-on property:sys.boot_completed=1
-    setprop vendor.haptic.calibrate.done 1

@@ -34,7 +34,6 @@
 #include <android/binder_manager.h>
 #include <android/binder_process.h>
 #include <stdlib.h>
-#include <thread>
 
 #include "Vibrator.h"
 #include "richtap/RichtapVibrator.h"
@@ -47,7 +46,6 @@ using std::literals::chrono_literals::operator""s;
 using ::android::base::GetProperty;
 using ::android::base::WaitForProperty;
 
-constexpr char kHapticCalibrateProp[] = "vendor.haptic.calibrate.done";
 constexpr char kVibratorReady[] = "sys.nameless.feature.vibrator.ready";
 constexpr char kSupportRichtapProp[] = "sys.nameless.feature.vibrator.richtap";
 constexpr char kRichtapDevProp[] = "sys.nameless.feature.vibrator.richtap_dev";
@@ -80,11 +78,7 @@ int main() {
         binder_status_t status = AServiceManager_addService(vib->asBinder().get(), instance.c_str());
         CHECK(status == STATUS_OK);
 
-        std::thread initThread([&]() {
-            WaitForProperty(kHapticCalibrateProp, "1", 500s);
-            cvib->init(nullptr);
-        });
-        initThread.detach();
+        cvib->init(nullptr);
     } else {
         const std::string instance = std::string() + Vibrator::descriptor + "/default";
         binder_status_t status = AServiceManager_addService(vib->asBinder().get(), instance.c_str());
