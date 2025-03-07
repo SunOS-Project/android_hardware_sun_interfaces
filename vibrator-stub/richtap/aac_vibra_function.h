@@ -39,8 +39,10 @@ enum PATTERN_PERFORM_STATE {
     extern int aac_vibra_dynamic_scale(uint8_t scale);
     extern int aac_vibra_setting_f0(int f0);
     extern int aac_vibra_stop(int32_t *index);
+#ifdef USE_RICHTAP_V2
     extern bool aac_vibra_set_drc_mode(int mode);
     extern int aac_vibra_update_parameter(const int32_t *data, int32_t length);
+#endif
 #ifdef __cplusplus
 }
 #endif

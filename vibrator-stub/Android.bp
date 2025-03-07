@@ -31,6 +31,33 @@ cc_binary {
     cflags: Common_CFlags,
     srcs: [
         "service.cpp",
+    ],
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "libcutils",
+        "liblog",
+        "libutils",
+        "android.hardware.vibrator-V2-ndk",
+        "android.hardware.vibrator-stub",
+    ],
+}
+
+cc_binary {
+    name: "android.hardware.vibrator.service-stub-richtap",
+    stem: "android.hardware.vibrator.service-stub",
+    vendor: true,
+    relative_install_path: "hw",
+    init_rc: ["android.hardware.vibrator.service-stub.rc"],
+    vintf_fragments: [
+        "android.hardware.vibrator.service-stub.xml",
+    ],
+    cflags: Common_CFlags + select(soong_config_variable("STUB_VIBRATOR_HAL", "USE_RICHTAP_V2"), {
+        "true": ["-DUSE_RICHTAP_V2"],
+        default: [],
+    }),
+    srcs: [
+        "service_richtap.cpp",
         "richtap/*.cpp",
     ],
     shared_libs: [

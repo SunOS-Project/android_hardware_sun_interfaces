@@ -254,6 +254,7 @@ ndk::ScopedAStatus RichtapVibrator::performHeParam(int32_t interval, int32_t amp
 
 ndk::ScopedAStatus RichtapVibrator::setHapticParam(const std::vector<int32_t>& data, const int32_t length,
                                                    const std::shared_ptr<IRichtapCallback>& callback) {
+#ifdef USE_RICHTAP_V2
     if (length == 2 && data[0] == HAPTIC_PARAM_DRC_MARK) {
         if (data[1] >= 0 && data[1] <= HAPTIC_PARAM_MAX_DRC) {
             aac_vibra_set_drc_mode(data[1]);
@@ -269,6 +270,11 @@ ndk::ScopedAStatus RichtapVibrator::setHapticParam(const std::vector<int32_t>& d
     }
     send_handle_result(callback, DEFAULT_RETURN_TIME_OUT, RICHTAP_HANDLE_SUCCESS);
     return ndk::ScopedAStatus::ok();
+#else
+    ALOGE("setHapticParam not support");
+    send_handle_result(callback, DEFAULT_RETURN_TIME_OUT, RICHTAP_HANDLE_NOT_SUPPORT);
+    return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
+#endif
 }
 
 ndk::ScopedAStatus RichtapVibrator::setDynamicScale(int32_t scale, const std::shared_ptr<IRichtapCallback>& callback) {

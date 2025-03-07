@@ -30,20 +30,60 @@
 #define LOG_TAG "android.hardware.vibrator-stub"
 
 #include <android-base/logging.h>
+#include <android-base/properties.h>
 #include <android/binder_manager.h>
 #include <android/binder_process.h>
+#include <stdlib.h>
 
 #include "Vibrator.h"
+#include "richtap/RichtapVibrator.h"
 
 using aidl::android::hardware::vibrator::Vibrator;
+using aidl::vendor::aac::hardware::richtap::vibrator::RichtapVibrator;
+
+using std::literals::chrono_literals::operator""s;
+
+using ::android::base::GetProperty;
+using ::android::base::WaitForProperty;
+
+constexpr char kVibratorReady[] = "sys.nameless.feature.vibrator.ready";
+constexpr char kSupportRichtapProp[] = "sys.nameless.feature.vibrator.richtap";
+constexpr char kRichtapDevProp[] = "sys.nameless.feature.vibrator.richtap_dev";
+constexpr char kRichtapConfigProp[] = "sys.nameless.feature.vibrator.richtap_config";
 
 int main() {
+    if (!WaitForProperty(kVibratorReady, "1", 500s)) {
+        return EXIT_FAILURE;
+    }
+
     ABinderProcess_setThreadPoolMaxThreadCount(0);
     std::shared_ptr<Vibrator> vib = ndk::SharedRefBase::make<Vibrator>();
 
-    const std::string instance = std::string() + Vibrator::descriptor + "/default";
-    binder_status_t status = AServiceManager_addService(vib->asBinder().get(), instance.c_str());
-    CHECK(status == STATUS_OK);
+    const std::string supportRichtap = GetProperty(kSupportRichtapProp, "false");
+    if (supportRichtap == "1" || supportRichtap == "true") {
+        ndk::SpAIBinder vibBinder = vib->asBinder();
+
+        // making the extension service
+        std::shared_ptr<RichtapVibrator> cvib = ndk::SharedRefBase::make<RichtapVibrator>();
+
+        // need to attach the extension to the same binder we will be registering
+        CHECK(STATUS_OK == AIBinder_setExtension(vibBinder.get(), cvib->asBinder().get()));
+
+        const std::string richtapDev = GetProperty(kRichtapDevProp, "");
+        const std::string richtapConfig = GetProperty(kRichtapConfigProp, "");
+        setenv("RICHTAP_DEVICE_PATH", richtapDev.c_str(), 1);
+        setenv("ENV_RICHTAP_CONFIG_PATH", richtapConfig.c_str(), 1);
+
+        const std::string instance = std::string() + Vibrator::descriptor + "/default";
+        binder_status_t status = AServiceManager_addService(vib->asBinder().get(), instance.c_str());
+        CHECK(status == STATUS_OK);
+
+        cvib->init(nullptr);
+    } else {
+        const std::string instance = std::string() + Vibrator::descriptor + "/default";
+        binder_status_t status = AServiceManager_addService(vib->asBinder().get(), instance.c_str());
+        CHECK(status == STATUS_OK);
+    }
 
     ABinderProcess_joinThreadPool();
     return EXIT_FAILURE;  // should not reach
