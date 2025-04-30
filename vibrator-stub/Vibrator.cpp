@@ -45,7 +45,7 @@ namespace vibrator {
 
 Vibrator::Vibrator() {
     const std::string supportExternalControl =
-            GetProperty("sys.nameless.feature.vibrator.external_control", "false");
+            GetProperty("sys.sun.feature.vibrator.external_control", "false");
     mSupportExternalControl = supportExternalControl == "1" || supportExternalControl == "true";
 }
 

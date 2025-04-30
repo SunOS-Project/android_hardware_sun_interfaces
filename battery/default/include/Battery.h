@@ -5,13 +5,13 @@
 
 #pragma once
 
-#include <aidl/vendor/nameless/hardware/battery/BnBattery.h>
-#include <aidl/vendor/nameless/hardware/battery/ChargingStatus.h>
-#include <aidl/vendor/nameless/hardware/battery/Feature.h>
+#include <aidl/vendor/sun/hardware/battery/BnBattery.h>
+#include <aidl/vendor/sun/hardware/battery/ChargingStatus.h>
+#include <aidl/vendor/sun/hardware/battery/Feature.h>
 
 namespace aidl {
 namespace vendor {
-namespace nameless {
+namespace sun {
 namespace hardware {
 namespace battery {
 
@@ -25,6 +25,6 @@ public:
 
 }  // namespace battery
 }  // namespace hardware
-}  // namespace nameless
+}  // namespace sun
 }  // namespace vendor
 }  // namespace aidl

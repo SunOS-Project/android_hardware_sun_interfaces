@@ -8,11 +8,11 @@
 #include <log/log.h>
 
 #undef LOG_TAG
-#define LOG_TAG "vendor.nameless.hardware.battery-service"
+#define LOG_TAG "vendor.sun.hardware.battery-service"
 
 namespace aidl {
 namespace vendor {
-namespace nameless {
+namespace sun {
 namespace hardware {
 namespace battery {
 
@@ -53,6 +53,6 @@ ndk::ScopedAStatus Battery::readChargingStatus(ChargingStatus* _aidl_return) {
 
 }  // namespace battery
 }  // namespace hardware
-}  // namespace nameless
+}  // namespace sun
 }  // namespace vendor
 }  // namespace aidl

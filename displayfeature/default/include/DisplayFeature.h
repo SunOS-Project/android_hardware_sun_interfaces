@@ -5,13 +5,13 @@
 
 #pragma once
 
-#include <aidl/vendor/nameless/hardware/displayfeature/BnDisplayFeature.h>
-#include <aidl/vendor/nameless/hardware/displayfeature/Command.h>
-#include <aidl/vendor/nameless/hardware/displayfeature/Feature.h>
+#include <aidl/vendor/sun/hardware/displayfeature/BnDisplayFeature.h>
+#include <aidl/vendor/sun/hardware/displayfeature/Command.h>
+#include <aidl/vendor/sun/hardware/displayfeature/Feature.h>
 
 namespace aidl {
 namespace vendor {
-namespace nameless {
+namespace sun {
 namespace hardware {
 namespace displayfeature {
 
@@ -27,6 +27,6 @@ public:
 
 }  // namespace displayfeature
 }  // namespace hardware
-}  // namespace nameless
+}  // namespace sun
 }  // namespace vendor
 }  // namespace aidl

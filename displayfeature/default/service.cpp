@@ -9,7 +9,7 @@
 #include <android/binder_manager.h>
 #include <android/binder_process.h>
 
-using ::aidl::vendor::nameless::hardware::displayfeature::DisplayFeature;
+using ::aidl::vendor::sun::hardware::displayfeature::DisplayFeature;
 
 int main() {
     ABinderProcess_setThreadPoolMaxThreadCount(0);

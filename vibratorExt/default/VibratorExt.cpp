@@ -8,11 +8,11 @@
 #include <log/log.h>
 
 #undef LOG_TAG
-#define LOG_TAG "vendor.nameless.hardware.vibratorExt-service"
+#define LOG_TAG "vendor.sun.hardware.vibratorExt-service"
 
 namespace aidl {
 namespace vendor {
-namespace nameless {
+namespace sun {
 namespace hardware {
 namespace vibratorExt {
 
@@ -80,6 +80,6 @@ ndk::ScopedAStatus VibratorExt::isHapticStyleSupported(Style style, bool* _aidl_
 
 }  // namespace vibratorExt
 }  // namespace hardware
-}  // namespace nameless
+}  // namespace sun
 }  // namespace vendor
 }  // namespace aidl

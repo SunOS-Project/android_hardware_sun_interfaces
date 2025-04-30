@@ -9,7 +9,7 @@
 #include <android/binder_manager.h>
 #include <android/binder_process.h>
 
-using ::aidl::vendor::nameless::hardware::vibratorExt::VibratorExt;
+using ::aidl::vendor::sun::hardware::vibratorExt::VibratorExt;
 
 int main() {
     ABinderProcess_setThreadPoolMaxThreadCount(0);

@@ -4,11 +4,11 @@
  */
 
 aidl_interface {
-    name: "vendor.nameless.hardware.battery",
+    name: "vendor.sun.hardware.battery",
     vendor_available: true,
-    srcs: ["vendor/nameless/hardware/battery/*.aidl"],
+    srcs: ["vendor/sun/hardware/battery/*.aidl"],
     stability: "vintf",
-    owner: "nameless",
+    owner: "sun",
     backend: {
         cpp: {
             enabled: false,

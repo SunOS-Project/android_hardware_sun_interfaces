@@ -4,11 +4,11 @@
  */
 
 aidl_interface {
-    name: "vendor.nameless.hardware.displayfeature",
+    name: "vendor.sun.hardware.displayfeature",
     vendor_available: true,
-    srcs: ["vendor/nameless/hardware/displayfeature/*.aidl"],
+    srcs: ["vendor/sun/hardware/displayfeature/*.aidl"],
     stability: "vintf",
-    owner: "nameless",
+    owner: "sun",
     backend: {
         cpp: {
             enabled: false,

@@ -5,15 +5,15 @@
 
 #pragma once
 
-#include <aidl/vendor/nameless/hardware/vibratorExt/BnVibratorExt.h>
-#include <aidl/vendor/nameless/hardware/vibratorExt/Effect.h>
-#include <aidl/vendor/nameless/hardware/vibratorExt/LevelRange.h>
-#include <aidl/vendor/nameless/hardware/vibratorExt/Style.h>
-#include <aidl/vendor/nameless/hardware/vibratorExt/Type.h>
+#include <aidl/vendor/sun/hardware/vibratorExt/BnVibratorExt.h>
+#include <aidl/vendor/sun/hardware/vibratorExt/Effect.h>
+#include <aidl/vendor/sun/hardware/vibratorExt/LevelRange.h>
+#include <aidl/vendor/sun/hardware/vibratorExt/Style.h>
+#include <aidl/vendor/sun/hardware/vibratorExt/Type.h>
 
 namespace aidl {
 namespace vendor {
-namespace nameless {
+namespace sun {
 namespace hardware {
 namespace vibratorExt {
 
@@ -32,6 +32,6 @@ public:
 
 }  // namespace vibratorExt
 }  // namespace hardware
-}  // namespace nameless
+}  // namespace sun
 }  // namespace vendor
 }  // namespace aidl

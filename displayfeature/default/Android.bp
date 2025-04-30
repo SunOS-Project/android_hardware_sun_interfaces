@@ -4,10 +4,10 @@
  */
 
 cc_binary {
-    name: "vendor.nameless.hardware.displayfeature-service.default",
-    defaults: ["nameless_aidl_defaults"],
-    init_rc: ["vendor.nameless.hardware.displayfeature-service.rc"],
-    vintf_fragments: ["vendor.nameless.hardware.displayfeature-service.xml"],
+    name: "vendor.sun.hardware.displayfeature-service.default",
+    defaults: ["sun_aidl_defaults"],
+    init_rc: ["vendor.sun.hardware.displayfeature-service.rc"],
+    vintf_fragments: ["vendor.sun.hardware.displayfeature-service.xml"],
     vendor: true,
     relative_install_path: "hw",
     srcs: [
@@ -19,6 +19,6 @@ cc_binary {
         "libbinder_ndk",
         "liblog",
         "libutils",
-        "vendor.nameless.hardware.displayfeature-V1-ndk",
+        "vendor.sun.hardware.displayfeature-V1-ndk",
     ],
 }

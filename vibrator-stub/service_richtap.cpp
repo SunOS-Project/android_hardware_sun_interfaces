@@ -46,10 +46,10 @@ using std::literals::chrono_literals::operator""s;
 using ::android::base::GetProperty;
 using ::android::base::WaitForProperty;
 
-constexpr char kVibratorReady[] = "sys.nameless.feature.vibrator.ready";
-constexpr char kSupportRichtapProp[] = "sys.nameless.feature.vibrator.richtap";
-constexpr char kRichtapDevProp[] = "sys.nameless.feature.vibrator.richtap_dev";
-constexpr char kRichtapConfigProp[] = "sys.nameless.feature.vibrator.richtap_config";
+constexpr char kVibratorReady[] = "sys.sun.feature.vibrator.ready";
+constexpr char kSupportRichtapProp[] = "sys.sun.feature.vibrator.richtap";
+constexpr char kRichtapDevProp[] = "sys.sun.feature.vibrator.richtap_dev";
+constexpr char kRichtapConfigProp[] = "sys.sun.feature.vibrator.richtap_config";
 
 int main() {
     if (!WaitForProperty(kVibratorReady, "1", 500s)) {

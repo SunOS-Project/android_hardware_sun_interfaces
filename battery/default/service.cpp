@@ -9,7 +9,7 @@
 #include <android/binder_manager.h>
 #include <android/binder_process.h>
 
-using ::aidl::vendor::nameless::hardware::battery::Battery;
+using ::aidl::vendor::sun::hardware::battery::Battery;
 
 int main() {
     ABinderProcess_setThreadPoolMaxThreadCount(0);

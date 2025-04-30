@@ -4,11 +4,11 @@
  */
 
 aidl_interface {
-    name: "vendor.nameless.hardware.vibratorExt",
+    name: "vendor.sun.hardware.vibratorExt",
     vendor_available: true,
-    srcs: ["vendor/nameless/hardware/vibratorExt/*.aidl"],
+    srcs: ["vendor/sun/hardware/vibratorExt/*.aidl"],
     stability: "vintf",
-    owner: "nameless",
+    owner: "sun",
     backend: {
         cpp: {
             enabled: false,

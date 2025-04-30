@@ -8,11 +8,11 @@
 #include <log/log.h>
 
 #undef LOG_TAG
-#define LOG_TAG "vendor.nameless.hardware.displayfeature-service"
+#define LOG_TAG "vendor.sun.hardware.displayfeature-service"
 
 namespace aidl {
 namespace vendor {
-namespace nameless {
+namespace sun {
 namespace hardware {
 namespace displayfeature {
 
@@ -71,6 +71,6 @@ ndk::ScopedAStatus DisplayFeature::sendCommand(Command command, int* _aidl_retur
 
 }  // namespace displayfeature
 }  // namespace hardware
-}  // namespace nameless
+}  // namespace sun
 }  // namespace vendor
 }  // namespace aidl

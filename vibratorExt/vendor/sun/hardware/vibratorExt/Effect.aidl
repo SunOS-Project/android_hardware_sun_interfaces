@@ -1,0 +1,77 @@
+/*
+ * Copyright (C) 2025 The Nameless-CLO Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+package vendor.sun.hardware.vibratorExt;
+
+@VintfStability
+@Backing(type="int")
+enum Effect {
+    /**
+     * AOSP effects
+     */
+    CLICK,
+    DOUBLE_CLICK,
+    TICK,
+    THUD,
+    POP,
+    HEAVY_CLICK,
+
+    /**
+     * Duration based effects
+     */
+    DURATION_DEFAULT = 100,
+    DURATION_STRENGTH_LEVEL1,
+    DURATION_STRENGTH_LEVEL2,
+    DURATION_STRENGTH_LEVEL3,
+    DURATION_STRENGTH_LEVEL4,
+    DURATION_STRENGTH_LEVEL5,
+    DURATION_STRENGTH_LEVEL6,
+    DURATION_STRENGTH_LEVEL7,
+    DURATION_STRENGTH_LEVEL8,
+    DURATION_STRENGTH_LEVEL9,
+    DURATION_STRENGTH_LEVEL10,
+    DURATION_NOTIFICATION,
+    DURATION_ALARM_CALL,
+
+    /**
+     * Ringtone effects
+     */
+    RINGTONE_WALTZ = 500,
+    RINGTONE_CUT,
+    RINGTONE_CLOCK,
+    RINGTONE_SHORT,
+
+    /**
+     * Ramp effects
+     */
+    RAMP_DOWN = 1000,
+
+    /**
+     * Custom effects
+     */
+    CUSTOM_EFFECT_START = 2000,
+    ALERT_SLIDER_BOTTOM,
+    ALERT_SLIDER_MIDDLE,
+    BACK_GESTURE,
+    BUTTON_CLICK,
+    CLEAR_ALL_NOTIFICATION,
+    CLEAR_ALL_RECENT,
+    EXPAND_PANEL,
+    INDEXABLE_WIDGET,
+    KEYBOARD_PRESS,
+    LOCKSCREEN_SHORTCUT,
+    OFF_SCREEN_GESTURE,
+    PLUG_IN,
+    QUICK_CAMERA,
+    SCREEN_OFF,
+    SCREEN_ON,
+    SCREENSHOT,
+    SLIDER_EDGE,
+    SLIDER_STEP,
+    SWITCH_TOGGLE,
+    UNIFIED_ERROR,
+    UNIFIED_SUCCESS,
+    CUSTOM_EFFECT_END,
+}

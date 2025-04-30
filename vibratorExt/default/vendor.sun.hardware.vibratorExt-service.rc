@@ -1,0 +1,7 @@
+# Copyright (C) 2025 The Nameless-CLO Project
+# SPDX-License-Identifier: Apache-2.0
+
+service vendor.sun_vibratorExt /vendor/bin/hw/vendor.sun.hardware.vibratorExt-service.default
+    class hal
+    user system
+    group system
